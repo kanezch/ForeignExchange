@@ -1,17 +1,20 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'application'
-apply plugin: 'idea'
 
 mainClassName = 'MainClass'
 
-repositories {
-    mavenCentral()
+jar {
+    manifestContentCharset 'utf-8'
+    metadataCharset 'utf-8'
+    manifest {
+        attributes "Main-Class": "MainClass"
+    }
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
 
-jar {
-    baseName = 'ForeignExchange'
-    version =  '0.1.0'
+repositories {
+    mavenCentral()
 }
 
 sourceCompatibility = 1.8

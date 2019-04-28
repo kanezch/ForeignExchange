@@ -1,7 +1,3 @@
-/**
- *货币汇率调用示例代码 － 聚合数据
- *在线接口文档：http://www.juhe.cn/docs/23
- **/
 
 public class MainClass{
 

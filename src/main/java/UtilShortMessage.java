@@ -19,7 +19,7 @@ public class UtilShortMessage {
     public static final int DEF_READ_TIMEOUT = 30000;
     public static String userAgent =  "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.66 Safari/537.36";
 
-    //配置您申请的KEY
+
     public static final String APPKEY ="1431dae4a956300c4a1ccd315d57a227";
 
     public static void mobileQuery(){
@@ -44,14 +44,6 @@ public class UtilShortMessage {
         }
     }
 
-    /**
-     *
-     * @param strUrl 请求地址
-     * @param params 请求参数
-     * @param method 请求方法
-     * @return  网络请求字符串
-     * @throws Exception
-     */
     public static String net(String strUrl, Map params,String method) throws Exception {
         HttpURLConnection conn = null;
         BufferedReader reader = null;
@@ -104,7 +96,6 @@ public class UtilShortMessage {
         return rs;
     }
 
-    //将map型转为请求参数型
     public static String urlencode(Map<String,String> data) {
         StringBuilder sb = new StringBuilder();
         for (Map.Entry i : data.entrySet()) {

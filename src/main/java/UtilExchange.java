@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 获取澳元汇率
+ * ��ȡ��Ԫ����
  */
 public class UtilExchange {
     public static final String DEF_CHATSET = "UTF-8";
@@ -17,7 +17,6 @@ public class UtilExchange {
     public static final int DEF_READ_TIMEOUT = 30000;
     public static String userAgent =  "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.66 Safari/537.36";
 
-    //配置您申请的KEY
     public static final String APPKEY ="b34d6d12dc17cbaa581900bc42c8d085";
 
     public static double getAUSDollarExRate(){
@@ -41,8 +40,8 @@ public class UtilExchange {
                 JSONObject tempJsonObj;
                 for (int i = 0; i < arrJsonObjResult.size(); i++) {
                     tempJsonObj = arrJsonObjResult.getJSONObject(i);
-                    if (tempJsonObj.containsKey("澳大利亚元")){
-                        ausDollarExRate = tempJsonObj.getJSONObject("澳大利亚元").getDouble("fSellPri");
+                    if (tempJsonObj.containsKey("�Ĵ�����Ԫ")){
+                        ausDollarExRate = tempJsonObj.getJSONObject("�Ĵ�����Ԫ").getDouble("fSellPri");
                         break;
                     }
                 }
@@ -56,14 +55,6 @@ public class UtilExchange {
         return ausDollarExRate;
     }
 
-    /**
-     *
-     * @param strUrl 请求地址
-     * @param params 请求参数
-     * @param method 请求方法
-     * @return  网络请求字符串
-     * @throws Exception
-     */
     public static String net(String strUrl, Map params,String method) throws Exception {
         HttpURLConnection conn = null;
         BufferedReader reader = null;
@@ -112,7 +103,6 @@ public class UtilExchange {
         return rs;
     }
 
-    //将map型转为请求参数型
     public static String urlencode(Map<String,Object>data) {
         StringBuilder sb = new StringBuilder();
         for (Map.Entry i : data.entrySet()) {
